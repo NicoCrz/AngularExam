@@ -8,6 +8,7 @@ import {Restaurant} from "../../modeles/restaurant";
 })
 export class RestaurantsTableComponent implements OnInit {
 
+  //je ne comprends pas pourquoi il récupère pas la table de mockoon..
   @Input() restaurants: Restaurant[]=[]
   constructor() { }
 
