@@ -1,0 +1,13 @@
+<h2> Table des restaurants </h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Evaluation</th>
+  </tr>
+  <tr *ngFor="let restaurant of restaurants;  let i = index" [appTableColoration]="i">
+    <td>{{restaurant.name}}</td>
+    <td>{{restaurant.address}}</td>
+    <td>{{restaurant.evaluations}}</td>
+  </tr>
+</table>

@@ -1,0 +1,20 @@
+<h2>Ajouter un restaurant</h2>
+
+<form #form="ngForm" (ngSubmit)="submit()">
+  <div>
+    <label for="name">Name</label>
+    <input #userNameInput="ngModel" type="text" id="name" name="name" required minlength="1" maxlength="30" [(ngModel)]="restaurant.name">
+    <span *ngIf="userNameInput.invalid && userNameInput.errors && userNameInput.errors.required" style="color: red">Le champs est requis</span>
+    <span *ngIf="userNameInput.invalid && userNameInput.errors && userNameInput.errors.minlength" style="color: red">Le champs est trop court</span>
+    <span *ngIf="userNameInput.invalid && userNameInput.errors && userNameInput.errors.maxlength" style="color: red">Le champs est trop long</span>
+  </div>
+  <div>
+    <label for="address">address</label>
+    <input type="text" id="address" name="address" minlength="5" maxlength="50" [(ngModel)]="restaurant.address">
+  </div>
+  <div>
+    <label for="evaluation">Evaluation</label>
+    <input type="number" id="evaluation" name="evaluation" [(ngModel)]="restaurant.evaluations">
+  </div>
+  <input type="submit">
+</form>
